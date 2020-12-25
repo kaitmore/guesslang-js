@@ -26,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip  
 
     - run: ls -la
-    - run: cd guesslang && ls
+    - run: cd hooks && ls
     - run: pwd
     - run: pip install -r /Users/runner/work/guesslang-js/guesslang-js/guesslang/requirements.txt
     - run: cd guesslang && pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ -onefile
