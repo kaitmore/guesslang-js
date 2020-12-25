@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['guesslang/__main__.py'],
-             pathex=['/Users/kaitmore/Projects/guesslang-js'],
+a = Analysis(['guess.py'],
+             pathex=['/usr/local/bin/miniconda3/lib/python3.7/site-packages', '/Users/kaitmore/Projects/guesslang-js'],
              binaries=[],
-             datas=[('./guesslang/data/', './guesslang/data/')],
+             datas=[('/usr/local/bin/miniconda3/lib/python3.7/site-packages/guesslang/data/', './guesslang/data/')],
              hiddenimports=[],
              hookspath=['./hooks/'],
              runtime_hooks=[],
@@ -19,15 +19,19 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
           [],
+          exclude_binaries=True,
           name='guess',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          upx_exclude=[],
-          runtime_tmpdir=None,
           console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               upx_exclude=[],
+               name='guess')
