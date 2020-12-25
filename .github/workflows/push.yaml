@@ -35,6 +35,7 @@ jobs:
         pip install pyinstaller \
         pip install -r ./requirements.txt
     - run: pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ --onefile
+    - run: ls
     - run: ls dist
     - name: Upload a single artifact
       uses: actions/upload-artifact@v2

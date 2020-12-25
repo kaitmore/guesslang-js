@@ -4,11 +4,11 @@ block_cipher = None
 
 
 a = Analysis(['guess.py'],
-             pathex=['/usr/local/bin/miniconda3/lib/python3.7/site-packages', '/Users/kaitmore/Projects/guesslang-js'],
+             pathex=['/Users/kaitmore/Projects/guesslang-js'],
              binaries=[],
              datas=[('/usr/local/bin/miniconda3/lib/python3.7/site-packages/guesslang/data/', './guesslang/data/')],
              hiddenimports=[],
-             hookspath=['./hooks/'],
+             hookspath=['../../hooks/'],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
