@@ -25,7 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip  
 
-    - run: ls
+    - run: ls -la
     - run: cd guesslang && ls
     - run: pwd
     - run: pip install -r /Users/runner/work/guesslang-js/guesslang-js/guesslang/requirements.txt
