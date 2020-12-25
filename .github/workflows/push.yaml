@@ -25,5 +25,5 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip \
-        cd guesslang && ls && pip install -r requirements.txt
+        pip install -r ./guesslang/requirements.txt
     - run: cd guesslang && pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ -onefile
