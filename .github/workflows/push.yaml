@@ -24,7 +24,11 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - run: git clone git@github.com:yoeo/guesslang.git
+    - name: Checkout yoeo/guesslang repo
+      uses: actions/checkout@v2
+      with:
+        repository: yoeo/guesslang
+        path: guesslang
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip   \
