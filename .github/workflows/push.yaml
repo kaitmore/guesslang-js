@@ -39,5 +39,5 @@ jobs:
     - name: Upload a single artifact
       uses: actions/upload-artifact@v2
       with:
-        name: guesslang.bin
-        path: dist
+        name: guesslang-binary
+        path: dist/guess
