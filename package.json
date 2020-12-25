@@ -1,0 +1,19 @@
+{
+  "name": "guesslang-js",
+  "version": "1.0.0",
+  "description": "A NodeJS wrapper around the guesslang deep learning software that detects the programming language of a given source code",
+  "main": "index.js",
+  "scripts": {
+    "build": "swift build --configuration=release && mv .build/release/active-win main",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "guesslang",
+    "deep",
+    "learning"
+  ],
+  "author": "Kaitlin Moreno",
+  "license": "MIT"
+}
