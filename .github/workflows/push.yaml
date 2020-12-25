@@ -36,23 +36,7 @@ jobs:
         pip install -r ./requirements.txt
     - run: pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ --onefile
     - run: ls dist
-    - name: Download a single artifact
-      uses: actions/download-artifact@v2
+    - name: Upload a single artifact
+      uses: actions/upload-artifact@v2
       with:
         name: ./dist/guess
-
-    - name: Download a single artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: guess
-
-
-    - name: Download a single artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: /guesslang/dist/guess
-
-    - name: Download a single artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: /guesslang/guesslang/dist/guess
