@@ -9,8 +9,10 @@ on:
     
 jobs:
   build:
-
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./guesslang
     strategy:
       matrix:
         python-version: [3.7]
@@ -21,12 +23,10 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
+
+    - run: git clone git@github.com:yoeo/guesslang.git
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip  
-
-    - run: ls -la
-    - run: cd hooks && ls
-    - run: pwd
-    - run: pip install -r /Users/runner/work/guesslang-js/guesslang-js/guesslang/requirements.txt
+        python -m pip install --upgrade pip   \
+        pip install -r ./guesslang/requirements.txt
     - run: cd guesslang && pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ -onefile
