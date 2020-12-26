@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: guesslang-binary
-        path: guesslang/dist/guess/guess
+        path: guesslang/dist/guess/

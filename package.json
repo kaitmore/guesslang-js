@@ -4,7 +4,7 @@
   "description": "A NodeJS wrapper around the guesslang deep learning software that detects the programming language of a given source code",
   "main": "index.js",
   "scripts": {
-    "build": "pyinstaller guesslang/__main__.py -n guess -y --add-data ./guesslang/data/:./guesslang/data/ --onefile",
+    "build": "pyinstaller guesslang/__main__.py -n guess -y --add-data ./guesslang/data/:./guesslang/data/",
     "prepublishOnly": "npm run build"
   },
   "files": [
