@@ -7,6 +7,11 @@
     "build": "pyinstaller guesslang/__main__.py -n guess -y --add-data ./guesslang/data/:./guesslang/data/ --onefile",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "index.js",
+    "lib",
+    "guess"
+  ],
   "keywords": [
     "node",
     "js",
