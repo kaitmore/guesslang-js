@@ -1,0 +1,5 @@
+*.spec
+guesslang/
+guess
+__pycache__/
+*.tgz

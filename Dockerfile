@@ -11,6 +11,6 @@ COPY /guesslang .
 RUN pip install -r requirements.txt
 
 RUN ls -la
-RUN ./build.sh
+RUN pyinstaller guesslang/__main__.py -n guess -y --additional-hooks-dir ./hooks/ --add-data ./guesslang/data/:./guesslang/data/ --onefile
 
 CMD ["sleep", "99999999"]
